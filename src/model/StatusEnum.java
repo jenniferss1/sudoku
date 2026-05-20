@@ -1,7 +1,7 @@
 package model;
 
 public enum StatusEnum {
-    NON_STARTED,
+    NOT_STARTED,
     INCOMPLETE,
     COMPLETE
 }

@@ -59,7 +59,7 @@ public class Board {
         spaces.forEach(Collection::clear);
     }
 
-    public boolean isGameComplete(){
-        return !hasErrors() && getStatus() == COMPLETE;
+    public boolean gameIsFinished(){
+        return !hasErrors() && getStatus().equals(COMPLETE);
     }
 }

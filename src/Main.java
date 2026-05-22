@@ -1,16 +1,16 @@
-import ui.frame.MainFrame;
-import ui.panel.MainPanel;
+import ui.screen.MainScreen;
 
 import javax.swing.*;
 import java.awt.*;
 
-void main() {
+import static java.util.stream.Collectors.toMap;
 
-    var dimension = new Dimension(500, 500);
-    JPanel mainPanel = new MainPanel(dimension);
-    JFrame mainFrame = new MainFrame(dimension, mainPanel);
-    mainFrame.revalidate();
-    mainFrame.repaint();
+void main(String[] args) {
+
+    final var gameConfig = Stream.of(args)
+            .collect(toMap(k -> k.split(";")[0], v -> v.split(";")[1]));
+    var mainScreen = new MainScreen(gameConfig);
+    mainScreen.buildMainScreen();
 
 
 }
